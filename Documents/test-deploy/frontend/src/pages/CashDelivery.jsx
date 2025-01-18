@@ -9,7 +9,7 @@ const CashDelivery = ({ token }) => {
   const getUserOrders = async () => {
     //fetch user orders from server
     const response = await axios.get(
-      "http://localhost:4000/api/orders/getuserorders",
+      "https://vercel-test-five-peach.vercel.app/api/orders/getuserorders",
       { headers: { token } }
     );
 
@@ -60,7 +60,7 @@ const CashDelivery = ({ token }) => {
                   <p>Qty: {dataItem.quantity}</p>
                 </div>
                 <img
-                  src={`http://localhost:4000/${dataItem.image}`}
+                  src={`https://vercel-test-five-peach.vercel.app/${dataItem.image}`}
                   alt="image"
                 />
             

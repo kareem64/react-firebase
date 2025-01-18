@@ -24,7 +24,7 @@ const submitHandle = async(e)=>{
    formData.append("category", values.category);
    formData.append("quantity", values.quantity);
    formData.append("image", image);
-   const result = await axios.put(`http://localhost:4000/api/products/updateproduct/${id}`,formData)
+   const result = await axios.put(`https://vercel-test-five-peach.vercel.app/api/products/updateproduct/${id}`,formData)
    if(result.data.success){
      toast.success(result.data.message)
      getProduct()
@@ -35,7 +35,7 @@ const submitHandle = async(e)=>{
 
 const getProduct = async() =>{
     // fetch product by id and set it to product state
-    const responce = await axios.post('http://localhost:4000/api/products/getproduct/'+id)
+    const responce = await axios.post('https://vercel-test-five-peach.vercel.app/api/products/getproduct/'+id)
     if(responce.data.success){
         setProduct(responce.data.product)
       
@@ -95,7 +95,7 @@ getProduct()
       />
       <label htmlFor="file-input">
         <img
-          src={image?URL.createObjectURL(image):`http://localhost:4000/${product.image}`}
+          src={image?URL.createObjectURL(image):`https://vercel-test-five-peach.vercel.app/${product.image}`}
           alt="upload Image"
           width={100}
           height={100}

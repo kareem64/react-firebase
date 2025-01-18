@@ -16,7 +16,7 @@ const Register = ({ setUserName, setToken, token }) => {
   const submitHandle = async (e) => {
     e.preventDefault();
     const result = await axios.post(
-      `http://localhost:4000/api/users/${
+      `https://vercel-test-five-peach.vercel.app/api/users/${
         form === "LogIn" ? "signin" : "signup"
       }`,
       values
@@ -48,7 +48,7 @@ const Register = ({ setUserName, setToken, token }) => {
       const result = { email, name, password };
 
       const response = await axios.post(
-        "http://localhost:4000/api/users/googlesignin",
+        "https://vercel-test-five-peach.vercel.app/api/users/googlesignin",
         result
       );
       if (response.data.success) {

@@ -37,7 +37,7 @@ const Dashboard = () => {
               <tr key={product._id}>
                 <td>
                   <img
-                    src={`http://localhost:4000/${product.image}`}
+                    src={`https://vercel-test-five-peach.vercel.app/${product.image}`}
                     alt=""
                     width={100}
                   />

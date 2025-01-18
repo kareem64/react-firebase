@@ -10,7 +10,7 @@ const Item = ({
   return (
   <div className="item">
   
-      <img className="image" src={`http://localhost:4000/${product.image}`} alt="image" width={200}height={200}/>
+      <img className="image" src={`https://vercel-test-five-peach.vercel.app/${product.image}`} alt="image" width={200}height={200}/>
       <div className="info">
         <p>{product.name}</p>
         <p>${product.price}</p>
