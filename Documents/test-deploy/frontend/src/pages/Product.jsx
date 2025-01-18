@@ -13,7 +13,7 @@ const Product = () => {
       <div className="product-left">
         {product.image ? (
           <img
-            src={`https://vercel-test-five-peach.vercel.app/${product.image}`}
+            src={`https://vercel-test-kd6mc9anc-kareem64s-projects.vercel.app/${product.image}`}
             alt=""
             width={300}
           />

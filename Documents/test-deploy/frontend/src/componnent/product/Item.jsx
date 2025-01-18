@@ -1,6 +1,5 @@
 import React from "react";
 import "../product/Item.css";
-import { Link } from "react-router-dom";
 import { addToCart } from "../../redux/cartSlice";
 import { useDispatch } from "react-redux";
 const Item = ({
