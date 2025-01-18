@@ -1,3 +1,4 @@
+import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
@@ -9,7 +10,8 @@ import {AuthContextProvider}from './context/AuthContextProvider.jsx'
 import { Provider } from 'react-redux'
 import store from './redux/store.js'
 createRoot(document.getElementById('root')).render(
-    <BrowserRouter>
+    <StrictMode>
+     <BrowserRouter>
     <GoogleOAuthProvider clientId={import.meta.env.VITE_GOOGLE_CLIENT_ID}>
     <ToastContainer position='top-center' theme='colored'/>
    <AuthContextProvider>
@@ -22,4 +24,6 @@ createRoot(document.getElementById('root')).render(
     
       </GoogleOAuthProvider>
     </BrowserRouter>
+    </StrictMode>
+   
 )
