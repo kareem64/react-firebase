@@ -1,0 +1,26 @@
+.success{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+   height: 80vh;
+}
+.success img{
+    width: 200px;
+    height: 200px;
+}
+.success h1{
+    font-weight: 600;
+    color: #07f863;
+    font-size: 27px;
+    border: 1px solid;
+    padding: 30px;
+}
+.success h2{
+    font-weight: 600;
+    color: #f80707;
+    font-size: 27px;
+    border: 1px solid;
+    padding: 30px;
+}

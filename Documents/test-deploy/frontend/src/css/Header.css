@@ -1,0 +1,102 @@
+.header{
+    
+    background-color: #678887;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 20px;
+    
+}
+.logo{
+    width: 100px;
+}
+.links{
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.links li{
+    list-style-type: none;
+}
+.links a {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
+.cart-header{
+    display: flex;
+    cursor: pointer;
+}
+.cart-header img{
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+.cart-header p{
+    color: #fff;
+    margin: 0;
+}
+.user-name{
+    color: #ffffff;
+    margin: 0;
+    background-color: #d46b33;
+    padding: 5px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+.profile{
+    position: relative;
+}
+.profile:hover .menu-down{
+display: flex;
+
+    transition: display 0.3s ease-in-out;
+
+}
+.empty{
+   
+    width: 120px;
+    height: 40px;
+    position: absolute;
+    top: -40px;
+    right: 13px;
+}
+.menu-down{
+    display:flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #eba25e;
+    position: absolute;
+    top: 70px;
+    right: -20px;
+    padding: 15px 10px;
+    border-radius: 10px;
+    border:3px solid #ea8a46;
+    display: none;
+
+}
+.menu-down .order{
+    display: flex;
+    align-items: center;
+    color: white;
+    cursor: pointer;
+}
+.menu-down .order img{
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+.menu-down .logout{
+    display: flex;
+    align-items: center;
+    color: white;
+    cursor: pointer;
+}
+.menu-down .logout img{
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}

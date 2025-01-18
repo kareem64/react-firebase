@@ -1,0 +1,30 @@
+.dash-board table{
+    width: 80%;
+    margin: 30px auto;
+}
+.dash-board table thead{
+    background-color: rgb(59, 111, 106);
+    color: white;
+    height: 50px;
+}
+.dash-board table thead th{
+    padding: 10px;
+    width: 100px;
+}
+.dash-board table tbody{
+    background-color: #d9d4ad;
+    text-align: center;
+}
+.dash-board table tbody tr:nth-child(even){
+    background-color: #9ebfc0;
+}
+.dash-board table tbody tr td{
+    padding: 10px;
+}
+.dash-board table tbody tr td button{
+    background-color: coral;
+    border: 1px  solid white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}

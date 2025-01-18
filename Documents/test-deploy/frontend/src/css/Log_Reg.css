@@ -1,0 +1,55 @@
+.register{
+    margin-top: 100px !important;
+    width: 500px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 500px;
+    box-shadow: 1px 1px 15px rgba(0,0,0,0.1);
+}
+.inputs{
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    margin-top: 50px;
+    gap: 20px;
+}
+.inputs input{
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+.inputs p{
+    color: #999;
+    margin-top: 10px;
+    font-size: 14px;
+}
+.inputs span{
+    color: red;
+    font-size:16px;
+    cursor: pointer;
+    margin-left: 5px;
+}
+.reg-btn{
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.sign-google{
+    background-color: red;
+    padding: 10px 20px;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.or{
+    text-align: center;
+    font-size: 30px;
+    color: green;
+}
