@@ -48,7 +48,7 @@ const Register = ({ setUserName, setToken, token }) => {
       const result = { email, name, password };
 
       const response = await axios.post(
-        "https://vercel-test-kd6mc9anc-kareem64s-projects.vercel.app/api/users/googlesignin",
+        "https://vercel-test-five-peach.vercel.app/api/users/googlesignin",
         result
       );
       if (response.data.success) {
