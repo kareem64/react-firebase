@@ -6,7 +6,7 @@ export const getCart = createAsyncThunk(
   async ({ token, toast }) => {
     try {
       const response = await axios.post(
-        "http://localhost:4000/api/cart/getcart",
+        "https://vercel-test-five-peach.vercel.app/api/cart/getcart",
         {},
         {
           headers: { token: token },
@@ -50,7 +50,7 @@ const cartSlice = createSlice({
         //ارسال اى دى المنتج والتوكن للباك اند
         axios
           .post(
-            "http://localhost:4000/api/cart/addtocart",
+            "https://vercel-test-five-peach.vercel.app/api/cart/addtocart",
             { productId: product._id },
             { headers: { token: state.token } }
           )
@@ -84,7 +84,7 @@ const cartSlice = createSlice({
       //ارسال اى دى المنتج والتوكن للباك اند
       axios
         .post(
-          "http://localhost:4000/api/cart/removefromcart",
+          "https://vercel-test-five-peach.vercel.app/api/cart/removefromcart",
           { productId: productId },
           { headers: { token: state.token } }
         )

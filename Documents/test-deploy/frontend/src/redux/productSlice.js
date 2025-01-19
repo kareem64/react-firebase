@@ -4,7 +4,7 @@ export const fetchProducts = createAsyncThunk(
   "products/fetchProducts",
   async () => {
     const response = await axios.post(
-      "http://localhost:4000/api/products/products"
+      "https://vercel-test-five-peach.vercel.app/api/products/products"
     );
     if (response.data.success) {
       return response.data.products;
@@ -20,7 +20,7 @@ export const addProduct = createAsyncThunk(
   async ({ formData, toast, navigate }) => {
     try {
       const response = await axios.post(
-        "http://localhost:4000/api/products/addproduct",
+        "https://vercel-test-five-peach.vercel.app/api/products/addproduct",
         formData
       );
       if (response.data.success) {
@@ -40,7 +40,7 @@ export const deleteProduct = createAsyncThunk(
   "products/deleteProduct",
   async ({id,toast,reloadPage}) => {
     const response = await axios.delete(
-      "http://localhost:4000/api/products/deleteproduct/"+id
+      "https://vercel-test-five-peach.vercel.app/api/products/deleteproduct/"+id
     );
     if (response.data.success) {
       toast.success(response.data.message);
