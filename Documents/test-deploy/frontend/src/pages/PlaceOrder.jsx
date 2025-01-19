@@ -45,7 +45,7 @@ const orderItems = [];
       "Content-Type": "application/json",
     };
     const responce = await fetch(
-      "https://vercel-test-kd6mc9anc-kareem64s-projects.vercel.app/api/orders/checkout-session",
+      "https://vercel-test-five-peach.vercel.app/api/orders/checkout-session",
       {
         method: "POST",
         headers: headers,
@@ -73,7 +73,7 @@ const orderItems = [];
       amount: totalPrice,
     };
     let response = await axios.post(
-      "https://vercel-test-kd6mc9anc-kareem64s-projects.vercel.app/api/orders/placeorder",
+      "https://vercel-test-five-peach.vercel.app/api/orders/placeorder",
       orderData,
       { headers: { token } }
     );

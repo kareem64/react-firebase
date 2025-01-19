@@ -1,9 +1,16 @@
 import React, { useEffect } from "react";
-import '../css/Cart.css'
+import "../css/Cart.css";
 import { removeFromCart } from "../redux/cartSlice";
 import { Link } from "react-router-dom";
-const Cart = ({ products, items, token, toast,dispatch,getCart ,totalPrice}) => {
-  
+const Cart = ({
+  products,
+  items,
+  token,
+  toast,
+  dispatch,
+  getCart,
+  totalPrice,
+}) => {
   return (
     <div className="cart">
       {token ? (
@@ -37,7 +44,11 @@ const Cart = ({ products, items, token, toast,dispatch,getCart ,totalPrice}) => 
                     <td>{item.quantity}</td>
                     <td>{product.price * item.quantity}</td>
                     <td>
-                      <button onClick={()=>dispatch(removeFromCart(product,getCart,dispatch))}>
+                      <button
+                        onClick={() =>
+                          dispatch(removeFromCart(product, getCart, dispatch))
+                        }
+                      >
                         Remove
                       </button>
                     </td>
@@ -50,13 +61,16 @@ const Cart = ({ products, items, token, toast,dispatch,getCart ,totalPrice}) => 
       ) : (
         <h1 className="mustlogin">You Must Login First</h1>
       )}
-   {token&& <div className="total">
-      <h1> Total Price : {totalPrice}</h1>
-      </div>}
+      {token && (
+        <div className="total">
+          <h1> Total Price : {totalPrice}</h1>
+        </div>
+      )}
       <div>
-    <Link to={'/placeorder'} > <button className="checkout" >
-Process checkout
-        </button></Link>   
+        <Link to={"/placeorder"}>
+          {" "}
+          <button className="checkout">Process checkout</button>
+        </Link>
       </div>
     </div>
   );
