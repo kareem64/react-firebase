@@ -7,7 +7,6 @@ import { useEffect} from "react";
 import { googleLogout } from "@react-oauth/google";
 import "./App.css";
 import Upload from "./pages/Upload";
-import Product from "./pages/Product";
 import Dashboard from "./pages/Dashboard";
 import Edit from "./pages/Edit";
 import { useDispatch, useSelector } from "react-redux";
@@ -77,7 +76,6 @@ function App() {
           }
         />
         <Route path="/upload" element={<Upload />} />
-        <Route path="/product/:id" element={<Product />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="edit/:id" element={<Edit />} />
         <Route path="/placeorder" element={<PlaceOrder   totalPrice={totalPrice} items={items} token={token}  products={products}  toast={toast} navigate={navigate}/>} />
