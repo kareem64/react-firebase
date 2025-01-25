@@ -18,6 +18,8 @@ import Orders from "./pages/Orders";
 import Success from "./componnent/Success";
 import Cancel from "./componnent/Cancel";
 import CashDelivery from "./pages/CashDelivery";
+import Products from "./pages/Products";
+import CreateProduct from "./pages/CreateProduct";
 function App() {
   const dispatch = useDispatch();
   const { products } = useSelector((state) => state.products);
@@ -83,6 +85,8 @@ function App() {
         <Route path="/success" element={<Success/>} />
         <Route path="/cancel" element={<Cancel/>} />
         <Route path="/cashDelivery" element={<CashDelivery token={token}/>} />
+        <Route path="/products" element={<Products />} />
+        <Route path="/createproduct" element={<CreateProduct />} />
 
 
         <Route

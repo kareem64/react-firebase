@@ -25,6 +25,9 @@ const goTocart=()=>{
         <Link to={"/"}>
           <li>Home</li>
         </Link>
+        <Link to={"/products"}>
+          <li>Products</li>
+        </Link>
      {admin===1?<Link to={"/upload"}>
         <img src="/images/upload.png" alt="" />
         </Link>:""}   
