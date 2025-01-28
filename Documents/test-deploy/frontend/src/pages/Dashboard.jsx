@@ -37,15 +37,15 @@ const Dashboard = () => {
               <tr key={product._id}>
                 <td>
                   <img
-                    src={`https://vercel-test-five-peach.vercel.app/${product.image}`}
+                    src={product.image.url}
                     alt=""
                     width={100}
                   />
                 </td>
                 <td>{product.name}</td>
                 <td>{product.price}</td>
-                <td>{product.description}</td>
-                <td>{product.category}</td>
+                <td>{product.desc}</td>
+                <td>{product.brand}</td>
                 <td>
                   <button onClick={() => delete_Product(product._id)}>
                     Delete

@@ -9,11 +9,11 @@ const Item = ({
   return (
   <div className="item">
   
-      <img className="image" src={`https://vercel-test-five-peach.vercel.app/${product.image}`} alt="image" width={200}height={200}/>
+      <img className="image" src={product.image.url} alt="image" width={200}height={200}/>
       <div className="info">
         <p>{product.name}</p>
         <p>${product.price}</p>
-        <p>{product.description}</p>
+        <p>{product.desc}</p>
         <button onClick={()=>dispatch(addToCart(product))}>Add to Cart</button>
       </div>
       

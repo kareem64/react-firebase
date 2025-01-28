@@ -34,7 +34,7 @@ const Cart = ({
                   <tr key={product._id}>
                     <td>
                       <img
-                        src={`https://vercel-test-five-peach.vercel.app/${product.image}`}
+                        src={product.image.url}
                         alt={product.name}
                         width={100}
                       />
@@ -63,7 +63,7 @@ const Cart = ({
       )}
       {token && (
         <div className="total">
-          <h1> Total Price : {totalPrice}</h1>
+          <h1> Total Price : ${totalPrice}</h1>
         </div>
       )}
       <div>

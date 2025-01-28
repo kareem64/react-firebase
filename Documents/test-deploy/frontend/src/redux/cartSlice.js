@@ -72,9 +72,9 @@ const cartSlice = createSlice({
     removeFromCart: (state, action) => {
       //تحقق من التوكن من الlocal storage
       // الباى لوود هو اللى جاى من زر الريموف
-     
+
       const productId = action.payload._id;
-      
+
       //التحقق من مطابقة المنتج اللى جاى من الباى لوود للمنتج الموجود فى السلة عن طريق ال ID
       //اذا كان موجود فى السلة يتم ازالة العنصر والتحذير عن الزيادة على الكمية
 
@@ -91,7 +91,6 @@ const cartSlice = createSlice({
         .then((response) => {
           if (response.data.success) {
             toast.success(response.data.message);
-            
           } else {
             toast.error(response.data.message);
           }
@@ -108,14 +107,12 @@ const cartSlice = createSlice({
       })
       .addCase(getCart.fulfilled, (state, action) => {
         state.isLoading = false;
-       
-          state.items = action.payload.cart;
-        
 
-          state.userName = action.payload.user.name;
-      
-          state.admin = action.payload.admin;
-        
+        state.items = action.payload.cart;
+
+        state.userName = action.payload.user.name;
+
+        state.admin = action.payload.admin;
       })
       .addCase(getCart.rejected, (state, action) => {
         state.isLoading = false;

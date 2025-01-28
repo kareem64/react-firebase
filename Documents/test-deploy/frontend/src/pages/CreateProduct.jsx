@@ -1,9 +1,15 @@
 import axios from "axios";
 import React, { useState } from "react";
-
+import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import "../css/CreateProduct.css";
+import { useDispatch } from "react-redux";
+import { addProduct } from "../redux/productSlice";
 const CreateProduct = () => {
   const [image, setImage] = useState("");
   const [values, setValues] = useState();
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
   const handleChange = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value });
   };
@@ -14,22 +20,16 @@ const CreateProduct = () => {
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(values,image);
-    const responce = await axios.post('https://vercel-test-five-peach.vercel.app/api/cloudinary/addnewproduct', {
-        name: values.name,
-        brand: values.brand,
-        price: values.price,
-        desc: values.desc,
-        image
-    })
-    if(responce.data.success){
-        console.log(responce.data.message)
-        console.log(responce.data)
-    }else{
-        console.log(responce.data.message)
-    }
-    // upload image and send data to server
-  }
+    console.log(values, image);
+    const data = {
+      name: values.name,
+      brand: values.brand,
+      price: values.price,
+      desc: values.desc,
+      image,
+    };
+    dispatch(addProduct({ data, toast, navigate }));
+  };
   const transformImage = (file) => {
     const reader = new FileReader();
     if (file) {
@@ -44,15 +44,9 @@ const CreateProduct = () => {
 
   return (
     <div className="create-product">
-      <h1>create Product</h1>
+      <h1>Add Product</h1>
       <div className="inputs">
         <form action="">
-          <input
-            type="file"
-            accept="image"
-            onChange={handleImageChange}
-            required
-          />
           <input
             type="text"
             onChange={handleChange}
@@ -62,17 +56,16 @@ const CreateProduct = () => {
           />
           <select onChange={handleChange} name="brand">
             <option value="">Select Category</option>
-            <option value="Electronics">Electronics</option>
-            <option value="Clothes">Clothes</option>
-            <option value="Books">Books</option>
-            <option value="Home">Home</option>
+            <option value="Fruite">Fruite</option>
+            <option value="Vigetables">Vigetables</option>
             <option value="Others">Others</option>
           </select>
-          <input
-            type="text"
+          <textarea
+            rows={4}
+            cols={50}
             onChange={handleChange}
             required
-            placeholder="desc"
+            placeholder="Insert Description Here!"
             name="desc"
           />
           <input
@@ -82,12 +75,32 @@ const CreateProduct = () => {
             placeholder="Price"
             name="price"
           />
-          <button onClick={handleSubmit}>add product</button>
+
+          <label htmlFor="file-input">
+            <img
+              src={image ? image : "/images/upload.png"}
+              alt="upload Image"
+              width={100}
+              height={100}
+            />
+          </label>
+          <input
+            type="file"
+            hidden
+            id="file-input"
+            onChange={handleImageChange}
+          />
+          <div className="admin-btn">
+            <button onClick={handleSubmit}>add product</button>
+            <Link to={"/dashboard"}>
+              <button>Dash Board</button>
+            </Link>
+          </div>
         </form>
       </div>
-      <div className="image">
+      {/* <div className="image">
         {image ? <img src={image} alt="" /> : "image will apear here!"}
-      </div>
+      </div> */}
     </div>
   );
 };

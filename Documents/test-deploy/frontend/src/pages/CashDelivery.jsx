@@ -60,7 +60,7 @@ const CashDelivery = ({ token }) => {
                   <p>Qty: {dataItem.quantity}</p>
                 </div>
                 <img
-                  src={`https://vercel-test-five-peach.vercel.app/${dataItem.image}`}
+                  src={dataItem.image.url}
                   alt="image"
                 />
             

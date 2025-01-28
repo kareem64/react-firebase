@@ -6,7 +6,6 @@ import Cart from "./pages/Cart";
 import { useEffect} from "react";
 import { googleLogout } from "@react-oauth/google";
 import "./App.css";
-import Upload from "./pages/Upload";
 import Dashboard from "./pages/Dashboard";
 import Edit from "./pages/Edit";
 import { useDispatch, useSelector } from "react-redux";
@@ -31,7 +30,7 @@ function App() {
     if (product) {
       acc += product.price * item.quantity;
     } else {
-      console.log("Product not found");
+      
     }
     return acc;
   }, 0);
@@ -77,9 +76,8 @@ function App() {
             />
           }
         />
-        <Route path="/upload" element={<Upload />} />
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="edit/:id" element={<Edit />} />
+        <Route path="edit/:id" element={<Edit navigate={navigate}/>} />
         <Route path="/placeorder" element={<PlaceOrder   totalPrice={totalPrice} items={items} token={token}  products={products}  toast={toast} navigate={navigate}/>} />
         <Route path="/orders" element={<Orders/>} />
         <Route path="/success" element={<Success/>} />
